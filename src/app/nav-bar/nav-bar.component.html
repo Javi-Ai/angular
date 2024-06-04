@@ -1,0 +1,18 @@
+<div class="navbar">
+  <div class="logo">
+    <a href="#">Sneakers</a>
+  </div>
+  <div class="menu-toggle" (click)="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <div class="menu" [class.active]="menuActive">
+    <a routerLink="/crear">Crear producto</a>
+    <a routerLink="/listado">Listado de productos</a>
+  </div>
+</div>
+<br>
+<router-outlet></router-outlet>
+<br><br><br>
+<app-footer></app-footer>

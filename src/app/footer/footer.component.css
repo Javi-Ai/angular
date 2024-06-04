@@ -1,0 +1,55 @@
+ul {
+  display: inline-grid;
+  grid-auto-flow: row;
+  grid-gap: 24px;
+  justify-items: center;
+  margin: auto;
+  padding: 0; /* Quitamos el padding por defecto de la lista */
+  list-style: none; /* Quitamos los bullets de la lista */
+}
+
+@media (min-width: 500px) {
+  ul {
+    grid-auto-flow: column;
+  }
+}
+
+a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  box-shadow: inset 0 -1px 0 hsla(0, 0%, 100%, 0.4);
+}
+
+a:hover {
+  box-shadow: inset 0 -1.2em 0 hsla(0, 0%, 100%, 0.4);
+}
+
+li:last-child {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+li:hover ~ li p {
+  animation: wave-animation 0.3s infinite;
+}
+
+/* below is just for demo styling */
+
+div {
+  display: flex;
+  height: 25px;
+  width: 100%;
+  background-color: #ededed;
+  line-height: 1.3;
+  font-family: Menlo, monospace;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #ededed;
+  padding: 10px 0; /* Añadimos un padding arriba y abajo para separar el contenido del footer del borde */
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Añadimos una sombra en la parte superior */
+}
+

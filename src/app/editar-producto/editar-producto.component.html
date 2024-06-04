@@ -1,0 +1,63 @@
+<h2>Editar producto</h2>
+
+<form [formGroup]="formProducto" (ngSubmit)="actualizarProducto()" id="form-producto">
+    <div class="cont-input">
+        <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Nombre producto</mat-label>
+            <input matInput formControlName="nombre">
+        </mat-form-field>
+        @if(controls['nombre'].invalid &&
+        controls['nombre'].errors &&
+        (controls['nombre'].dirty || controls['nombre'].touched)){
+        <div class="text-danger alert-custom">
+            El nombre es requerido
+        </div>
+        }
+    </div>
+
+    <div class="cont-input">
+        <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Descripcion</mat-label>
+            <textarea matInput formControlName="descripcion"></textarea>
+
+        </mat-form-field>
+        @if(formProducto.get('descripcion')?.invalid &&
+        formProducto.get('descripcion')?.errors &&
+        (formProducto.get('descripcion')?.dirty || formProducto.get('descripcion')?.touched)){
+        <div class="text-danger alert-custom">
+            La descripción es requerida
+        </div>
+        }
+    </div>
+    <div class="row">
+        <div class="col-md-6 cont-input">
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Precio</mat-label>
+                <input matInput formControlName="precio">
+            </mat-form-field>
+            @if(formProducto.get('precio')?.invalid &&
+            formProducto.get('precio')?.errors &&
+            (formProducto.get('precio')?.dirty || formProducto.get('precio')?.touched)){
+            <div class="text-danger alert-custom">
+                @if(formProducto.get('precio')?.errors?.['required']) {
+                El precio es requerido
+
+                }
+                @if(formProducto.get('precio')?.errors?.['min']) {
+                El precio debe ser mayor a 0
+
+                }
+            </div>
+            }
+        </div>
+        <div class="col-md-6 cont-input">
+            <input type="file" name="img-producto" id="img-producto" (change)="onFileSelected($event)">
+            <img [src]="formProducto.get('imagen')?.value" alt="">
+        </div>
+    </div>
+
+    <div class="text-center">
+        <button mat-raised-button color="primary">Actualizar</button>
+    </div>
+
+</form>

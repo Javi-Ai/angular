@@ -1,0 +1,64 @@
+.img-producto{
+    width: 100px;
+}
+.example-card {
+  max-width: 400px;
+}
+
+.hola{
+  height: 55px;
+  margin-top: 0px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.cards {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 300px;
+  margin-bottom: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cards:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.cards img {
+  border-radius: 5px;
+  max-width: 100%;
+  height: auto;
+}
+
+mat-card-header {
+  align-items: center;
+}
+
+mat-card-title {
+  font-weight: bold;
+}
+
+mat-card-content p {
+  font-size: 14px;
+  color: #555;
+}
+
+.boton-accion {
+    margin-right: 10px; /* Ajusta este valor según tus necesidades */
+}
+
+.boton-accion:last-child {
+    margin-right: 0; /* Asegura que el último botón no tenga margen a la derecha */
+}
+
+h2{
+    text-align: center;
+    font-family: sans-serif;
+}

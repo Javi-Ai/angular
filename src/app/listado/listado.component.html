@@ -1,0 +1,34 @@
+<div class="container">
+  <ng-container *ngFor="let producto of dataSource; let i = index;">
+    <div class="cards">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar><img src="https://i.postimg.cc/5NsbwNYD/logo.png" alt=""></div>
+          <mat-card-title>{{ producto.nombre }}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image [src]="ruta_imagenes + producto.imagen" alt="Photo">
+        <mat-card-content>
+          <br>
+          <p>
+            {{ producto.descripcion }}
+          </p>
+        </mat-card-content>
+        <div class="acciones">
+            <mat-card-actions>
+                <button mat-flat-button [routerLink]="['/editar', producto.id]" color="primary" aria-label="Editar producto" class="boton-accion">
+                    Editar
+                </button>
+                <button mat-flat-button (click)="eliminarProducto(producto.id.toString())" color="warn" style="cursor: pointer;" aria-label="Eliminar producto" class="boton-accion">
+                    Eliminar
+                </button>
+            </mat-card-actions>
+        </div>
+        
+      </mat-card>
+    </div>
+    
+  </ng-container>
+</div>
+
+
+
